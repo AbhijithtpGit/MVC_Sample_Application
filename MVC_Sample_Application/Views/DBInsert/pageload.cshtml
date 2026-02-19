@@ -1,0 +1,38 @@
+﻿@model MVC_Sample_Application.Models.Insert
+@{
+    ViewBag.Title = "pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Insert Details</h2>
+
+<div>
+    @using (Html.BeginForm("ButtonClick", "DBInsert", FormMethod.Post))
+    {
+        <div>
+            <label>Name</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Name)
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+        <div>
+            <label>Age</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Age)
+            @Html.ValidationMessageFor(m => m.Age)
+        </div>
+        <div>
+            <label>Email</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        <div>
+            <input type="submit" value="insert"/>
+            @Html.DisplayFor(m=>m.Message)
+        </div>
+    }
+</div>
